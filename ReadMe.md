@@ -30,21 +30,6 @@ If you have question you can [ask them in a GitHub issue](https://github.com/yja
 # Content
 - [Hello World Example](#hello-world-example)
     - [With WebDriver Extensions](#with-webdriver-extensions)
-    - [Without WebDriver Extensions](#without-webdriver-extensions)
-    - [Further increased readability with Groovy](#further-increased-readability-with-groovy)
-- [Getting Started](#getting-started)
-    - [Requirements](#requirements)
-    - [Use Maven to add WebDriver Extensions](#use-maven-to-add-webdriver-extensions)
-    - [Download and manage your drivers with the Maven Plugin](#download-and-manage-your-drivers-with-the-maven-plugin)
-    - [Speed up your tests by running them in parallel](#speed-up-your-tests-by-running-them-in-parallel)
-    - [Cross Browser test your website with the JUnitRunner](#cross-browser-test-your-website-with-the-junitrunner)
-    - [Model your website with the Page Object Pattern](#model-your-website-with-the-page-object-pattern)
-    - [Model your page components with the WebComponent](#model-your-page-components-with-the-webcomponent)
-    - [Make your test readable as instructions with the Bot Pattern](#make-your-test-readable-as-instructions-with-the-bot-pattern)
-    - [Create new projects with the Maven Archetype](#create-new-projects-with-the-maven-archetype)
-- [Javadoc](#javadoc)
-- [Changelog](#changelog)
-- [Contributors](#contributors)
 - [License](#license)
 
 
