@@ -11,4 +11,9 @@ public class ElementFinder {
     public static By tagContainsChildTags(String tag, String childTags) {
         return By.cssSelector("" + tag + "> " + childTags);
     }
+
+    public static By elementText(String text) {
+        String identifier = ".//*[text()='" + text + "']";
+        return By.xpath(identifier);
+    }
 }
