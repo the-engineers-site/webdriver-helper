@@ -1,6 +1,9 @@
 package com.automation.finders;
 
+import com.automation.ElementActionsHelper.WaitUtils;
+import com.automation.browser.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class ElementFinder {
 
