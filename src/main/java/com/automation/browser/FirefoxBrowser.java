@@ -12,7 +12,7 @@ class FirefoxBrowser {
 
     private static WebDriver browser;
 
-    static WebDriver getInstance() {
+    static WebDriver getInstance(String hubUrl) {
         WebDriverManager.firefoxdriver().setup();
         if (browser == null) {
             FirefoxProfile profile = new FirefoxProfile();

@@ -1,6 +1,8 @@
 package com.automation.finders;
 
+import com.automation.ElementActionsHelper.WaitUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class ElementFinder {
 
@@ -11,6 +13,12 @@ public class ElementFinder {
     public static By tagContainsChildTags(String tag, String childTags) {
         return By.cssSelector("" + tag + "> " + childTags);
     }
+
+
+    public static WebElement childElement(WebElement parentElement, By element) {
+        return WaitUtils.waitUntilElementDisplayed(parentElement).findElement(element);
+    }
+
 
     public static By elementText(String text) {
         String identifier = ".//*[text()='" + text + "']";

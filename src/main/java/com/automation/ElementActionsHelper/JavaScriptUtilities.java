@@ -3,15 +3,15 @@ package com.automation.ElementActionsHelper;
 import com.automation.browser.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class JavaScriptUtilities {
 
-    static WebDriver browser = Driver.getInstance();
+    //static WebDriver browser = Driver.getInstance();
+    public static boolean glowStatus = false;
 
     public static boolean executeScript(String script, WebElement identifier) {
-        JavascriptExecutor js = (JavascriptExecutor) browser;
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getInstance();
         try {
             js.executeScript(script, identifier);
         } catch (Exception ee) {
@@ -20,9 +20,44 @@ public class JavaScriptUtilities {
         return true;
     }
 
-    public static void debugInfo(WebElement ele) {
+    public static boolean executeScript(String script) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getInstance();
+        try {
+            js.executeScript(script);
+        } catch (Exception ee) {
+            ee.printStackTrace();
+        }
+        return true;
+    }
+
+
+    public static void debugInfo(WebElement ele, String actionType, String message) {
         if (System.getProperty("DEBUG_MODE") != null && System.getProperty("DEBUG_MODE").equalsIgnoreCase("true")) {
+            displayMessage(actionType, message);
             blinkBackground(ele);
+        }
+    }
+
+    private static void displayMessage(String actionType, String message) {
+        if (!glowStatus) {
+            addGlow();
+            glowStatus = true;
+        }
+        executeScript("$.growl.notice({ title: '" + actionType + "', message: '" + message + "' });");
+    }
+
+    public static void addGlow() {
+        executeScript("if (!window.jQuery) {"
+                + "var jquery = document.createElement('script'); jquery.type = 'text/javascript';"
+                + "jquery.src = 'https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js';"
+                + "document.getElementsByTagName('head')[0].appendChild(jquery);" + "}");
+        executeScript("$.getScript('https://the-internet.herokuapp.com/js/vendor/jquery.growl.js')");
+        executeScript("$('head').append('<link rel=\"stylesheet\" "
+                + "href=\"https://the-internet.herokuapp.com/css/jquery.growl.css\" " + "type=\"text/css\" />');");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 
@@ -43,8 +78,8 @@ public class JavaScriptUtilities {
     }
 
 
-    public static void debugInfo(By element) {
+    public static void debugInfo(By element, String actionType, String message) {
         WebElement ele = WaitUtils.waitUntilElementDisplayed(element);
-        debugInfo(ele);
+        debugInfo(ele, actionType, message);
     }
 }
