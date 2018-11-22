@@ -1,6 +1,7 @@
 package com.automation.ElementActionsHelper;
 
 import com.automation.browser.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,6 +20,11 @@ public class JavaScriptUtilities {
         return true;
     }
 
+    public static void debugInfo(WebElement ele) {
+        if (System.getProperty("DEBUG_MODE") != null && System.getProperty("DEBUG_MODE").equalsIgnoreCase("true")) {
+            blinkBackground(ele);
+        }
+    }
 
     public static void blinkBackground(WebElement elem) {
         String style = "'background: lightblue;border: solid;'";
@@ -37,4 +43,8 @@ public class JavaScriptUtilities {
     }
 
 
+    public static void debugInfo(By element) {
+        WebElement ele = WaitUtils.waitUntilElementDisplayed(element);
+        debugInfo(ele);
+    }
 }
