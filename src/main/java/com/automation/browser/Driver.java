@@ -16,6 +16,12 @@ public class Driver {
     }
 
     public static WebDriver getInstance() {
+        try {
+            driver.browser.getTitle();
+        } catch (Exception ee) {
+            driver.browser = null;
+            driver.startBrowser();
+        }
         return driver.browser;
     }
 

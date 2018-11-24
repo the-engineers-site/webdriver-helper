@@ -35,7 +35,7 @@ public class ConfigReader {
             return value;
         } else {
             Reporter.logEvent("Key :" + key + " does not exist in collection/property file");
-            return "";
+            return null;
         }
     }
 
