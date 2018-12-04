@@ -39,41 +39,55 @@ If you have question you can [ask them in a GitHub issue](https://github.com/yja
 # Hello World Example
 Here is an example of how a cross browser test looks like with and without the WebDriver Extensions Framework. The test will run on Firefox, Chrome and Internet Explorer. It will google for "Hello World" and assert that the search result contains the searched text "Hello World".
 
+<a href="https://github.com/yjagdale/webdriver-helper-impl"> Sample Project </a>
+
+
+### config file 
+
+```properties
+browser=chrome
+implicit_wait=20
+default_wait=30
+base_url=https://opensource-demo.orangehrmlive.com/
+```
+
 
 
 ### With WebDriver Extensions
 ```java
-@RunWith(WebDriverRunner.class)
-@Firefox
-@Chrome
-@InternetExplorer
-public class WebDriverExtensionsExampleTest {
+ @Test
+    public void validationMessagePassword() {
+        ElementActions.sendKeys("User Name", "Admin");
+        ElementActions.click("Login");
+        String errorMessage = ElementActions.getText("Error Message");
+        Assert.assertEquals(errorMessage, "Password cannot be empty");
+    }
 
-    // Model
-    @FindBy(name = "q")
-    WebElement queryInput;
-    @FindBy(name = "btnG")
-    WebElement searchButton;
-    @FindBy(id = "search")
-    WebElement searchResult;
 
     @Test
-    public void searchGoogleForHelloWorldTest() {
-        open("http://www.google.com");
-        assertCurrentUrlContains("google");
-
-        type("Hello World", queryInput);
-        click(searchButton);
-
-        waitFor(3, SECONDS);
-        assertTextContains("Hello World", searchResult);
+    public void validationMessageUser() {
+        ElementActions.clear("User Name");
+        ElementActions.sendKeys("Password", "admin123");
+        ElementActions.click("Login");
+        String errorMessage = ElementActions.getText("Error Message");
+        Assert.assertEquals(errorMessage, "Username cannot be empty");
     }
-}
 ```
 _<sub>Imports are hidden for the sake of simplicity, for imports and instructions on how to run this example see this [gist](https://gist.github.com/andidev/ad006a454edfd9f0e9e5)</sub>_
 
 
 <br>
+
+
+### Debug Mode
+
+```java
+ System.setProperty("DEBUG_MODE", "true");
+```
+
+Once you enable debug mode every action will be displayed with toast message as well as element will be highlighted.
+<a href="http://52.183.43.60/dashboard/#"> Demo Video </a> Can be seen here.
+
 
 # License
 
