@@ -27,4 +27,11 @@ public class UIActions {
         JavaScriptUtilities.debugInfo(element, "SEND_KEYS", "Typing " + textToSet + " to input field " + element.toString());
         WaitUtils.waitUntilElementDisplayed(element, 60).sendKeys(textToSet);
     }
+
+
+    public static void clear(By element) {
+        Reporter.logEvent("Clearning element "+element.toString());
+        JavaScriptUtilities.debugInfo(element, "SEND_KEYS", "Clearning  " + element.toString() + " to input field " + element.toString());
+        WaitUtils.waitUntilElementDisplayed(element, 60).clear();
+    }
 }
