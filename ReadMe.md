@@ -1,11 +1,11 @@
-[![Travis Build Status](https://travis-ci.org/webdriverextensions/webdriverextensions.svg?branch=master)](https://travis-ci.org/webdriverextensions/webdriverextensions) [![Maven Central](https://img.shields.io/maven-central/v/com.github.webdriverextensions/webdriverextensions.svg)](https://search.maven.org/search?q=com.github.yjagdale)
+[![Travis Build Status](https://travis-ci.org/webdriverextensions/webdriverextensions.svg?branch=master)](https://travis-ci.org/webdriverextensions/webdriverextensions) [![Maven Central](https://img.shields.io/maven-central/v/com.github.yjagdale.webdriverutil/webdriver-helper-utils.svg)](https://search.maven.org/search?q=com.github.yjagdale)
 
 WebDriver Helper
 ===================
 
 WebDriver Helper Extensions is designed to simplify Java based Selenium/WebDriver tests. It's built on top of Selenium/WebDriver to make your tests more readable, reusabable and maintainable by providing easy handling towards browser and advance identifiers.
 
-Available through the [Maven Central Repository](http://mvnrepository.com/search?q=webdriverextensions)! Latest release is version 3.10.0 which includes selenium-java 3.8.1 as a transitive dependency.
+Available through the [Maven Central Repository](http://mvnrepository.com/search?q=com.github.yjagdale.webdriverutil)! Latest release is version 1.2.1 which includes selenium-java 3.14 as a transitive dependency.
 
 
 <br>
@@ -13,12 +13,12 @@ Available through the [Maven Central Repository](http://mvnrepository.com/search
 ### What's included in this utility?
 - Browser handling ( interaction towards all the available browsers)
 - Advanced selenium identifiers which can help you for rapid developement.
-- Advanced way to manage driver executables for each env(ubuntu/mac/windows) [Webdrivermanager](https://github.com/bonigarcia/webdrivermanager)
+- Advanced way to manage driver executables for each env(ubuntu/mac/windows) [Webdrivermanager](https://github.com/yjagdale/webdriver-helper)
 - Muti browser support.
 <br>
 
 ### Want to Contribute?
-If you find a bug or have a feature request please [create a new GitHub issue](https://github.com/webdriverextensions/webdriverextensions/issues/new) or even better clone this repository, commit your changes and make a [Pull Request](https://help.github.com/articles/using-pull-requests/).
+If you find a bug or have a feature request please [create a new GitHub issue](https://github.com/yjagdale/webdriver-helper/issues/new) or even better clone this repository, commit your changes and make a [Pull Request](https://help.github.com/articles/using-pull-requests/).
 
 <br>
 
