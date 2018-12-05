@@ -1,29 +1,22 @@
 package com.automation.browser;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 
 class FirefoxBrowser {
-
-    private static WebDriver browser;
-
-    static WebDriver getInstance(String hubUrl) {
+    final static Logger logger = Logger.getLogger(FirefoxBrowser.class);
+    WebDriver create() {
+        logger.info("Starting firefox on standalone machine");
         WebDriverManager.firefoxdriver().setup();
-        if (browser == null) {
-            FirefoxProfile profile = new FirefoxProfile();
-            profile.setPreference("dom.ipc.plugins.enabled.libflashplayer.so", "false");
-            profile.setAcceptUntrustedCertificates(true);
-            FirefoxOptions options = new FirefoxOptions();
-            options.setProfile(profile);
-            browser = new FirefoxDriver(options);
-            return browser;
-        } else {
-            return browser;
-        }
+        FirefoxProfile profile = new FirefoxProfile();
+        profile.setPreference("dom.ipc.plugins.enabled.libflashplayer.so", "false");
+        profile.setAcceptUntrustedCertificates(true);
+        FirefoxOptions options = new FirefoxOptions();
+        options.setProfile(profile);
+        return new FirefoxDriver(options);
     }
 }
