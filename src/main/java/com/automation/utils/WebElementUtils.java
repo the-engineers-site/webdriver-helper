@@ -25,21 +25,21 @@ public class WebElementUtils {
 
     public static By getIdentifier(String ele) {
         logger.debug("Fetching " + ele + " from collection");
-        By identifierFromCollection =  IdentifierCollection.getElement(ele);
+        By identifierFromCollection =  IdentifierCollection.get(ele);
         logger.info("Fetch webElement for "+ identifierFromCollection.toString());
         return identifierFromCollection;
     }
 
     public static WebElement getWebElement(String ele) {
         logger.debug("Fetching " + ele + " from collection");
-        By identifierFromCollection =  IdentifierCollection.getElement(ele);
+        By identifierFromCollection =  IdentifierCollection.get(ele);
         logger.info("Fetch webElement for "+ identifierFromCollection.toString());
         return WaitUtils.waitUntilElementDisplayed(identifierFromCollection);
     }
 
     public static WebElement getWebElement(String ele, int timeout) {
         logger.debug("Fetching " + ele + " from collection");
-        By identifierFromCollection =  IdentifierCollection.getElement(ele);
+        By identifierFromCollection =  IdentifierCollection.get(ele);
         logger.info("Fetch webElement for "+ identifierFromCollection.toString());
         return WaitUtils.waitUntilElementDisplayed(identifierFromCollection, timeout);
     }

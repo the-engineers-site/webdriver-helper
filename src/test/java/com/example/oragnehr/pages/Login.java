@@ -15,6 +15,6 @@ public class Login {
         collection.put("Password", ElementBy.Id("txtPassword"));
         collection.put("Login", ElementBy.id("btnLogin"));
         collection.put("Validation Message", ElementBy.id("spanMessage"));
-        IdentifierCollection.loadIdentifiers(collection);
+        IdentifierCollection.put(collection);
     }
 }

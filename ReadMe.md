@@ -39,25 +39,26 @@ If you have question you can [ask them in a GitHub issue](https://github.com/yja
 # Hello World Example
 Here is an example of how a cross browser test looks like with and without the WebDriver Extensions Framework. The test will run on Firefox, Chrome and Internet Explorer. It will google for "Hello World" and assert that the search result contains the searched text "Hello World".
 
-<a href="https://github.com/yjagdale/webdriver-helper-impl" target="_blank"> Sample Project </a>
+[Sample Project]("https://github.com/yjagdale/webdriver-helper-impl")
 
 
 ### config file 
 
-```properties
-browser=chrome
-implicit_wait=20
-default_wait=30
-base_url=https://opensource-demo.orangehrmlive.com/
+```text
+BROWSER_TYPE=ch
+BASE_URL=https://opensource-demo.orangehrmlive.com/
+IMPLICIT_WAIT=10
+DEBUG_MODE=true
 ```
 
 
 
 ### With WebDriver Extensions
 ```java
+class ExampleTestCases {
  @Test
     public void validationMessagePassword() {
-        ElementActions.sendKeys("User Name", "Admin");
+        ElementActions.type("User Name", "Admin");
         ElementActions.click("Login");
         String errorMessage = ElementActions.getText("Error Message");
         Assert.assertEquals(errorMessage, "Password cannot be empty");
@@ -72,6 +73,7 @@ base_url=https://opensource-demo.orangehrmlive.com/
         String errorMessage = ElementActions.getText("Error Message");
         Assert.assertEquals(errorMessage, "Username cannot be empty");
     }
+}
 ```
 _<sub>Imports are hidden for the sake of simplicity, for imports and instructions on how to run this example see this [gist](https://gist.github.com/andidev/ad006a454edfd9f0e9e5)</sub>_
 
@@ -81,12 +83,18 @@ _<sub>Imports are hidden for the sake of simplicity, for imports and instruction
 
 ### Debug Mode
 
-```java
+```text
  System.setProperty("DEBUG_MODE", "true");
 ```
 
 Once you enable debug mode every action will be displayed with toast message as well as element will be highlighted.
-<a href="http://52.183.43.60/dashboard/#" target="_blank"> Demo Video </a> Can be seen here.
+[Demo Video]("http://52.183.43.60/dashboard/") Can be seen here.
+
+-----
+
+## Version History:
+
+[ChangeLog](Changelog.md)
 
 
 # License
