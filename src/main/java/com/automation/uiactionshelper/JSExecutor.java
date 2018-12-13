@@ -61,4 +61,12 @@ public class JSExecutor {
         }
     }
 
+    public static void executeAsyncScript(String script) {
+        try {
+            getJsObject().executeAsyncScript(script);
+        } catch (Exception ee) {
+            ee.printStackTrace();
+        }
+    }
+
 }

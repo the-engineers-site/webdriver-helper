@@ -37,7 +37,7 @@ public class TestDebugger {
 
     private static void blinkBackground(WebElement elem) {
         logger.debug("DEBUG: BLINKING: BACKGROUND For:" + elem.toString());
-        String style = "'background: lightblue;border: solid;'";
+        String style = "'box-shadow: 0px 0px 6px 6px rgba(255, 0, 0, 1);'";
         String styleReset = "''";
         try {
             for (int i = 0; i < 3; i++) {

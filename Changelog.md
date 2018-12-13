@@ -1,6 +1,11 @@
 ## Changelog
 
 
+### [`1.2.5`](https://search.maven.org/artifact/com.github.yjagdale.webdriverutil/webdriver-helper-utils/1.2.4/jar): Maintenance Release
+ * Debug mode enhanced. [New border added]  
+ * New Method for executing javascript async. 
+```
+
 ### [`1.2.4`](https://search.maven.org/artifact/com.github.yjagdale.webdriverutil/webdriver-helper-utils/1.2.4/jar)
  * New finder is added with attribute and property name  
  * Logging will be removed [ You need to add your own log4j file to add logging] 
