@@ -1,7 +1,6 @@
 package com.automation.utils;
 
 import com.automation.uiactionshelper.JSExecutor;
-import netscape.javascript.JSObject;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
