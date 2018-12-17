@@ -15,17 +15,17 @@ public class ElementBy extends By {
     }
 
     public static By AttributeWithValue(String attribute, String value) {
-        return By.cssSelector("[" + attribute + "=" + value + "]");
+        return By.cssSelector("[" + attribute + "='" + value + "']");
 
     }
 
 
     public static By AttributeValueStartWith(String attribute, String value) {
-        return By.cssSelector("[" + attribute + "^=" + value + "]");
+        return By.cssSelector("[" + attribute + "^='" + value + "']");
     }
 
     public static By AttributeContainsValue(String attribute, String value) {
-        return By.cssSelector("[" + attribute + "*=" + value + "]");
+        return By.cssSelector("[" + attribute + "*='" + value + "']");
 
     }
 

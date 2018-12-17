@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.yjagdale.webdriverutil</groupId>
     <artifactId>webdriver-helper-utils</artifactId>
-    <version>1.2.5</version>
+    <version>${version}</version>
     <name>WebDriver Utilities</name>
     <url>https://github.com/yjagdale/webdriver-helper.git</url>
     <description>User can use webdriver with self managed mode. Just write test cases and use slandered method provided

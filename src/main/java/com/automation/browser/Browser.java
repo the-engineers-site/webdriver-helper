@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Browser {
 
-    final static Logger logger = Logger.getLogger(Browser.class);
+    private final static Logger logger = Logger.getLogger(Browser.class);
 
     private WebDriver driver = null;
     private static Browser browser = new Browser();
@@ -75,5 +75,20 @@ public class Browser {
         return browser.driver;
     }
 
+
+    public static void quit() {
+        logger.info("Quit Browser action called, Quitting current browser");
+        browser.driver.quit();
+    }
+
+    public static void close() {
+        logger.info("Close Browser action called, Closing current browser");
+        browser.driver.close();
+    }
+
+    public static void navigate(String url) {
+        logger.info("Navigating to " + url + "");
+        browser.driver.get(url);
+    }
 
 }

@@ -1,7 +1,11 @@
 ## Changelog
 
+### [`1.2.6`](https://search.maven.org/artifact/com.github.yjagdale.webdriverutil/webdriver-helper-utils/1.2.6/jar): Maintenance Release
+ * Basic Method To close and navigate on browser
+ * Updated version to take from command line
+ * Fixed css selector issue when selector contains space 
 
-### [`1.2.5`](https://search.maven.org/artifact/com.github.yjagdale.webdriverutil/webdriver-helper-utils/1.2.4/jar): Maintenance Release
+### [`1.2.5`](https://search.maven.org/artifact/com.github.yjagdale.webdriverutil/webdriver-helper-utils/1.2.5/jar): Maintenance Release
  * Debug mode enhanced. [New border added]  
  * New Method for executing javascript async. 
 ```
