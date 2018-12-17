@@ -9,7 +9,8 @@
     <name>WebDriver Utilities</name>
     <url>https://github.com/yjagdale/webdriver-helper.git</url>
     <description>User can use webdriver with self managed mode. Just write test cases and use slandered method provided
-    for preforming ui operations. Debug mode for getting more detailed route cause analysis. </description>
+        for preforming ui operations. Debug mode for getting more detailed route cause analysis.
+    </description>
     <packaging>jar</packaging>
 
     <parent>

@@ -43,7 +43,17 @@ public class ConfigReader {
     }
 
     private static String getEnvValue(String key) {
-        return System.getenv(key);
+        logger.info("Reading " + key + " from environment variable");
+        if (System.getenv(key) != null && !System.getenv(key).equals("")) {
+            logger.info("value found in env");
+            return System.getenv(key);
+        } else if (System.getProperty(key) != null && !System.getProperty(key).equals("")) {
+            logger.info("value found in properties");
+            return System.getProperty(key);
+        } else {
+            logger.info("No value found for " + key + " in env as well as properties");
+            return null;
+        }
     }
 
     private void init() {

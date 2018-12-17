@@ -16,8 +16,11 @@ class HubBasedBrowser {
     final static Logger logger = Logger.getLogger(HubBasedBrowser.class);
 
     HubBasedBrowser(String hubUrl) {
-        if (hubUrl != null)
+        if (hubUrl != null && !hubUrl.equals("")) {
+            hubUrl = (hubUrl.startsWith("http://") || hubUrl.startsWith("https://")) ? hubUrl : "http://" + hubUrl;
             this.hubUrl = hubUrl.endsWith("/") ? hubUrl + "wd/hub/" : hubUrl + "/wd/hub/";
+        }
+        logger.info("Setting up browser execution on " + hubUrl);
     }
 
     private DesiredCapabilities getCapabilities(String browserType) {

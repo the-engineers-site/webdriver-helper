@@ -39,8 +39,8 @@ public class Browser {
      */
     private void startSelfManagedDriver() {
         logger.info("Starting Self Managed WebDriver Instance");
-        String hubUrl = ConfigReader.getInstance().getConfig("hub_url");
-        if (hubUrl != null)
+        String hubUrl = ConfigReader.getInstance().getConfig("HUB_URL");
+        if (hubUrl != null && !hubUrl.equals(""))
             this.driver = new HubBasedBrowser(hubUrl).create();
         else
             this.driver = new StandaloneDriver().create();
