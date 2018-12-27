@@ -57,7 +57,7 @@ public class KeyBoardActions extends JSExecutor {
                 .sendKeys(textToType);
     }
 
-    @SuppressWarnings("WeakerAccess")
+    @SuppressWarnings(value = "WeakerAccess")
     public static void clear(String eleFromCollection) {
         logger.info("Clearing TextField on: " + eleFromCollection);
         debugger(eleFromCollection, "Clear Text field");

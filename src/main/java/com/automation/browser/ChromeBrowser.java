@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 class ChromeBrowser {
 
-    final static Logger logger = Logger.getLogger(ChromeBrowser.class);
+    private final static Logger logger = Logger.getLogger(ChromeBrowser.class);
     static ChromeOptions getChromeOptions() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");

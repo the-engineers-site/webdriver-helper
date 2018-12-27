@@ -39,6 +39,7 @@ public class WaitUtils {
     /*
      *  wait until element visible
      */
+    @SuppressWarnings(value = "WeakerAccess")
     public static WebElement waitUntilElementDisplayed(By element, int timeout) {
         logger.info("Waiting for element " + element.toString() + " with wait timeout " + timeout);
         WebElement webElement = getWait(timeout).until(ExpectedConditions.visibilityOfElementLocated(element));
@@ -46,6 +47,7 @@ public class WaitUtils {
         return webElement;
     }
 
+    @SuppressWarnings(value = "WeakerAccess")
     public static WebElement waitUntilElementDisplayed(By element) {
         logger.info("Waiting for element " + element.toString() + " with default timeout");
         WebElement webElement = getWait().until(ExpectedConditions.visibilityOfElementLocated(element));

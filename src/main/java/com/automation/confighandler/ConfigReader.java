@@ -57,6 +57,7 @@ public class ConfigReader {
     }
 
     private void init() {
+        logger.debug("DEFAULT FILE IS "+ DEFAULT_CONFIG_FILE);
         String configFile = getConfigFile();
         ClassLoader loader = Thread.currentThread().getContextClassLoader();
         try (InputStream resourceStream = loader.getResourceAsStream(configFile)) {

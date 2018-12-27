@@ -9,6 +9,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
+import static com.automation.utils.TestDebugger.addDebugInfo;
+
 public class JSExecutor {
 
     private final static Logger logger = Logger.getLogger(JSExecutor.class);
@@ -21,20 +23,20 @@ public class JSExecutor {
 
     static void debugger(By element, String action) {
         if (enableDebugger()) {
-            TestDebugger.addDebugInfo(element, action + ":" + "performed on " + element.toString());
+            addDebugInfo(element, action + ":" + "performed on " + element.toString());
         }
     }
 
     static void debugger(WebElement element, String action) {
         if (enableDebugger()) {
-            TestDebugger.addDebugInfo(element, action + ":" + "performed on " + element.toString());
+            addDebugInfo(element, action + ":" + "performed on " + element.toString());
         }
     }
 
     static void debugger(String identifier, String action) {
         By element = WebElementUtils.getIdentifier(identifier);
         if (enableDebugger()) {
-            TestDebugger.addDebugInfo(element, action + ":" + "performed on " + identifier);
+            addDebugInfo(element, action + ":" + "performed on " + identifier);
         }
     }
 
