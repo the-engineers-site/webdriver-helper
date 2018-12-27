@@ -19,7 +19,6 @@ public class ElementBy extends By {
 
     }
 
-
     public static By AttributeValueStartWith(String attribute, String value) {
         return By.cssSelector("[" + attribute + "^='" + value + "']");
     }
@@ -31,7 +30,17 @@ public class ElementBy extends By {
 
     public static By Id(String id) {
         return By.cssSelector("#" + id);
-
     }
+
+
+    public static By elementWithText(String text) {
+        return elementWithText(text, 1);
+    }
+
+    @SuppressWarnings(value = "WeakerAccess")
+    public static By elementWithText(String text, int index) {
+        return By.xpath(".//*[text()='" + text + "'][" + index + "]");
+    }
+
 
 }

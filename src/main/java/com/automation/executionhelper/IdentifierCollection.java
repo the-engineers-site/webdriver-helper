@@ -20,18 +20,18 @@ public class IdentifierCollection {
 
 
     public static void put(String key, By value) {
-        logger.info("Identifiers " + key + " added to collection with value "+ value);
+        logger.debug("Identifiers " + key + " added to collection with value "+ value);
         identifierCollection.put(key, value);
     }
 
     public static By get(String key) {
         By iden = identifierCollection.get(key);
-        logger.info("Returning value for " + key + ", With Value: "+ iden);
+        logger.debug("Returning value for " + key + ", With Value: "+ iden);
         return iden;
     }
 
     public static void loadIdentifier(String key, By value) {
-        logger.info("Identifiers " + key + " added to collection");
+        logger.debug("Identifiers " + key + " added to collection");
         identifierCollection.put(key, value);
     }
 

@@ -9,6 +9,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
+import static com.automation.utils.TestDebugger.addDebugInfo;
+
 public class JSExecutor {
 
     private final static Logger logger = Logger.getLogger(JSExecutor.class);
@@ -19,22 +21,22 @@ public class JSExecutor {
         return (debugMode != null && debugMode.equals("true")) || (debugModeProperty != null && debugModeProperty.equals("true"));
     }
 
-    protected static void debugger(By element, String action) {
+    static void debugger(By element, String action) {
         if (enableDebugger()) {
-            TestDebugger.addDebugInfo(element, action + ":" + "performed on " + element.toString());
+            addDebugInfo(element, action + ":" + "performed on " + element.toString());
         }
     }
 
-    protected static void debugger(WebElement element, String action) {
+    static void debugger(WebElement element, String action) {
         if (enableDebugger()) {
-            TestDebugger.addDebugInfo(element, action + ":" + "performed on " + element.toString());
+            addDebugInfo(element, action + ":" + "performed on " + element.toString());
         }
     }
 
-    public static void debugger(String identifier, String action) {
+    static void debugger(String identifier, String action) {
         By element = WebElementUtils.getIdentifier(identifier);
         if (enableDebugger()) {
-            TestDebugger.addDebugInfo(element, action + ":" + "performed on " + identifier);
+            addDebugInfo(element, action + ":" + "performed on " + identifier);
         }
     }
 
@@ -45,7 +47,7 @@ public class JSExecutor {
 
 
     public static void executeScript(String script, WebElement identifier) {
-        logger.info("Javascript execution: " + script);
+        logger.info("Javascript execution: " + script + " On webElement");
         try {
             getJsObject().executeScript(script, identifier);
         } catch (Exception ee) {
@@ -54,6 +56,7 @@ public class JSExecutor {
     }
 
     public static void executeScript(String script) {
+        logger.info("Executing JS " + script);
         try {
             getJsObject().executeScript(script);
         } catch (Exception ee) {
@@ -62,6 +65,7 @@ public class JSExecutor {
     }
 
     public static void executeAsyncScript(String script) {
+        logger.info("Async Script execution " + script);
         try {
             getJsObject().executeAsyncScript(script);
         } catch (Exception ee) {

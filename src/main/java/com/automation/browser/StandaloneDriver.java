@@ -5,7 +5,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
 class StandaloneDriver {
-    final static Logger logger = Logger.getLogger(StandaloneDriver.class);
+    private final static Logger logger = Logger.getLogger(StandaloneDriver.class);
 
     WebDriver create() {
         String browserType = ConfigReader.getInstance().getConfig("BROWSER_TYPE");
