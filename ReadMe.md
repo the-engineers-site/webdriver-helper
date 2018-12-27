@@ -39,7 +39,7 @@ If you have question you can [ask them in a GitHub issue](https://github.com/yja
 # Hello World Example
 Here is an example of how a cross browser test looks like with and without the WebDriver Extensions Framework. The test will run on Firefox, Chrome and Internet Explorer. It will google for "Hello World" and assert that the search result contains the searched text "Hello World".
 
-[Sample Project]("https://github.com/yjagdale/webdriver-helper-impl")
+<a href="https://github.com/yjagdale/webdriver-helper-impl" >Sample Project</a>
 
 
 ### config file 
