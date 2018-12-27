@@ -78,16 +78,29 @@ public class Browser {
 
     public static void quit() {
         logger.info("Quit Browser action called, Quitting current browser");
+        if(browser.driver == null) {
+            logger.info("No open browser available to close");
+            return;
+        }
         browser.driver.quit();
     }
 
     public static void close() {
         logger.info("Close Browser action called, Closing current browser");
+        if(browser.driver == null) {
+            logger.info("No open browser available to close");
+            return;
+        }
         browser.driver.close();
     }
 
     public static void navigate(String url) {
         logger.info("Navigating to " + url + "");
+        if (browser.driver == null) {
+            logger.info("No Existing browser created, Starting new Browser");
+            browser.startSelfManagedDriver();
+            browser.webDriverPropertiesSet(browser.driver);
+        }
         browser.driver.get(url);
     }
 
