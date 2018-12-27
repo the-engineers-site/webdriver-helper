@@ -48,6 +48,7 @@ public class MouseActions extends KeyBoardActions {
         WebElementUtils.getWebElement(identifier).click();
     }
 
+    @SuppressWarnings("WeakerAccess")
     public static void click(String eleFromCollection, int timeout) {
         logger.info("Clicking on collection element " + eleFromCollection + " with Timeout: " + timeout);
         debugger(eleFromCollection, "CLICK");

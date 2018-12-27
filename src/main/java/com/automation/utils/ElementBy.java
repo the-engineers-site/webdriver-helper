@@ -37,6 +37,7 @@ public class ElementBy extends By {
         return elementWithText(text, 1);
     }
 
+    @SuppressWarnings("WeakerAccess")
     public static By elementWithText(String text, int index) {
         return By.xpath(".//*[text()='" + text + "'][" + index + "]");
     }

@@ -17,6 +17,7 @@ public class KeyBoardActions extends JSExecutor {
         WebElementUtils.getWebElement(eleFromCollection).sendKeys(textToType);
     }
 
+    @SuppressWarnings("WeakerAccess")
     public static void type(String eleFromCollection, String textToType, int timeout) {
         logger.info("Setting " + textToType + " on collection object " + eleFromCollection + " with timeout " + timeout);
         debugger(eleFromCollection, "TYPE/SENDKEYS");
@@ -56,7 +57,7 @@ public class KeyBoardActions extends JSExecutor {
                 .sendKeys(textToType);
     }
 
-
+    @SuppressWarnings("WeakerAccess")
     public static void clear(String eleFromCollection) {
         logger.info("Clearing TextField on: " + eleFromCollection);
         debugger(eleFromCollection, "Clear Text field");

@@ -8,6 +8,7 @@ public class ElementActions extends MouseActions {
 
     private final static Logger logger = Logger.getLogger(ElementActions.class);
 
+    @SuppressWarnings("WeakerAccess")
     public static String getText(String eleFromCollection) {
         logger.info("Get Text performed on " + eleFromCollection);
         debugger(eleFromCollection, "Get Text");
