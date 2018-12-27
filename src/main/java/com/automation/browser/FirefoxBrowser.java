@@ -10,7 +10,6 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 class FirefoxBrowser {
     final static Logger logger = Logger.getLogger(FirefoxBrowser.class);
     WebDriver create() {
-        logger.info("Starting firefox on standalone machine");
         WebDriverManager.firefoxdriver().setup();
         FirefoxProfile profile = new FirefoxProfile();
         profile.setPreference("dom.ipc.plugins.enabled.libflashplayer.so", "false");

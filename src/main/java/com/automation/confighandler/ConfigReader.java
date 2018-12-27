@@ -9,7 +9,7 @@ import java.util.Properties;
 public class ConfigReader {
 
     private final static Logger logger = Logger.getLogger(ConfigReader.class);
-    private final String DEFAULT_CONFIG_FILE = "webdriver-helper.config";
+    private final String DEFAULT_CONFIG_FILE = "webdriver-helper.conf";
     private static ConfigReader configReader = new ConfigReader();
     private Properties properties = new Properties();
 
@@ -37,21 +37,21 @@ public class ConfigReader {
             logger.debug("Property file value for " + key + ": " + valueAtPropertyFile);
             return valueAtPropertyFile;
         } else {
-            logger.warn("Property with key:" + key + " is not available at env or property file");
+            logger.debug("Property with key:" + key + " is not available at env or property file");
             return null;
         }
     }
 
     private static String getEnvValue(String key) {
-        logger.info("Reading " + key + " from environment variable");
+        logger.debug("Reading " + key + " from environment variable");
         if (System.getenv(key) != null && !System.getenv(key).equals("")) {
-            logger.info("value found in env");
+            logger.debug("value found in env");
             return System.getenv(key);
         } else if (System.getProperty(key) != null && !System.getProperty(key).equals("")) {
-            logger.info("value found in properties");
+            logger.debug("value found in properties");
             return System.getProperty(key);
         } else {
-            logger.info("No value found for " + key + " in env as well as properties");
+            logger.debug("No value found for " + key + " in env as well as system properties");
             return null;
         }
     }

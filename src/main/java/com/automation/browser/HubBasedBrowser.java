@@ -13,7 +13,7 @@ import java.net.URL;
 class HubBasedBrowser {
 
     private String hubUrl = null;
-    final static Logger logger = Logger.getLogger(HubBasedBrowser.class);
+    private final static Logger logger = Logger.getLogger(HubBasedBrowser.class);
 
     HubBasedBrowser(String hubUrl) {
         if (hubUrl != null && !hubUrl.equals("")) {
@@ -25,6 +25,7 @@ class HubBasedBrowser {
 
     private DesiredCapabilities getCapabilities(String browserType) {
         DesiredCapabilities capability;
+        browserType = browserType == null ? "" : browserType;
         switch (browserType.toUpperCase()) {
             case "CHROME":
             case "CH":

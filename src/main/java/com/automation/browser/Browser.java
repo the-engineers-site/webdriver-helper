@@ -55,6 +55,7 @@ public class Browser {
             driver.manage().timeouts().implicitlyWait(timeout, TimeUnit.SECONDS);
         }
         if (baseUrl != null) {
+            logger.info("Base URL is "+ baseUrl);
             driver.get(baseUrl);
         }
     }
@@ -66,7 +67,7 @@ public class Browser {
      *
      */
     public static WebDriver getInstance() {
-        logger.info("Fetching Instance of browser");
+        logger.debug("Fetching Instance of browser");
         if (browser.driver == null) {
             logger.info("No Existing browser created, Starting new Browser");
             browser.startSelfManagedDriver();
@@ -77,7 +78,7 @@ public class Browser {
 
 
     public static void quit() {
-        logger.info("Quit Browser action called, Quitting current browser");
+        logger.debug("Quit Browser action called, Quitting current browser");
         if(browser.driver == null) {
             logger.info("No open browser available to close");
             return;
@@ -86,7 +87,7 @@ public class Browser {
     }
 
     public static void close() {
-        logger.info("Close Browser action called, Closing current browser");
+        logger.debug("Close Browser action called, Closing current browser");
         if(browser.driver == null) {
             logger.info("No open browser available to close");
             return;

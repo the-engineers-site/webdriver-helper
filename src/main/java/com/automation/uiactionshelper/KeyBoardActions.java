@@ -12,43 +12,43 @@ public class KeyBoardActions extends JSExecutor {
     private final static Logger logger = Logger.getLogger(KeyBoardActions.class);
 
     public static void type(String eleFromCollection, String textToType) {
-        logger.info("Type on: " + eleFromCollection + ": text: " + textToType);
+        logger.info("Setting " + textToType + " on collection Object" + eleFromCollection);
         debugger(eleFromCollection, "TYPE/SENDKEYS");
         WebElementUtils.getWebElement(eleFromCollection).sendKeys(textToType);
     }
 
-    public static void type(By identifier, String textToType, int timeout) {
-        logger.info("Type on: " + identifier.toString() + ": text: " + textToType+ " with timeout:"+timeout);
-        debugger(identifier, "TYPE/SENDKEYS");
-        WebElementUtils.getWebElement(identifier, timeout).sendKeys(textToType);
-    }
-
     public static void type(String eleFromCollection, String textToType, int timeout) {
-        logger.info("Type on: " + eleFromCollection + ": text: " + textToType + " with timeout:"+timeout);
+        logger.info("Setting " + textToType + " on collection object " + eleFromCollection + " with timeout " + timeout);
         debugger(eleFromCollection, "TYPE/SENDKEYS");
         WebElementUtils.getWebElement(eleFromCollection, timeout).sendKeys(textToType);
     }
 
+    public static void type(By identifier, String textToType, int timeout) {
+        logger.info("Setting " + textToType + " on element with Idenfitier " + identifier.toString() + " with timeout " + timeout);
+        debugger(identifier, "TYPE/SENDKEYS");
+        WebElementUtils.getWebElement(identifier, timeout).sendKeys(textToType);
+    }
+
     public static void type(By identifier, String textToType) {
-        logger.info("Type on: " + identifier.toString() + ": text: " + textToType);
+        logger.info("Setting " + textToType + " on element with Idenfitier " + identifier.toString());
         debugger(identifier, "TYPE/SENDKEYS");
         WebElementUtils.getWebElement(identifier).sendKeys(textToType);
     }
 
     public static void type(WebElement element, String textToType) {
-        logger.info("Type on: " + element.getTagName() + ": text: " + textToType);
+        logger.info("Setting " + textToType + " on web element with tag Name " + element.getText());
         debugger(element, "TYPE/SENDKEYS");
         WebElementUtils.getWebElement(element).sendKeys(textToType);
     }
 
     public static void type(WebDriver browser, By identifier, String textToType) {
-        logger.info("Existing Browser Action: Type on: " + identifier + ": text: " + textToType);
+        logger.info("Typing " + textToType + "  on " + identifier.toString() + " with specified browser");
         debugger(identifier, "TYPE/SENDKEYS");
         WaitUtils.waitUntilElementDisplayed(browser.findElement(identifier)).sendKeys(textToType);
     }
 
     public static void type(WebDriver browser, String identifierFromCollection, String textToType) {
-        logger.info("Existing Browser Action: Type on: " + identifierFromCollection + ": text: " + textToType);
+        logger.info("Typing " + textToType + "  on " + identifierFromCollection + " with specified browser");
         debugger(identifierFromCollection, "TYPE/SENDKEYS");
         WaitUtils.waitUntilElementDisplayed(
                 browser.findElement(WebElementUtils
@@ -58,13 +58,13 @@ public class KeyBoardActions extends JSExecutor {
 
 
     public static void clear(String eleFromCollection) {
-        logger.info("Clearing TextField on: " + eleFromCollection );
+        logger.info("Clearing TextField on: " + eleFromCollection);
         debugger(eleFromCollection, "Clear Text field");
         WebElementUtils.getWebElement(eleFromCollection).clear();
     }
 
     public static void clear(By identifier, int timeout) {
-        logger.info("Clearing TextField on: " + identifier.toString() );
+        logger.info("Clearing TextField on: " + identifier.toString());
         debugger(identifier, "Clear Text field");
         WebElementUtils.getWebElement(identifier).clear();
     }

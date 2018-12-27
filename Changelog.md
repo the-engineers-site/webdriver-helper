@@ -1,5 +1,14 @@
 ## Changelog
 
+### [`1.3`](https://search.maven.org/artifact/com.github.yjagdale.webdriverutil/webdriver-helper-utils/1.3/jar): New Functionality
+* Now you can create Page Collection and add you page classes, New Instance of page will be created once you perform click on element which will navigate to required page
+* Logging changed, Info logs are More readable logs and debug will be more detailed.
+* Wait method for element disappear added. 
+
+
+### [`1.2.6.2`](https://search.maven.org/artifact/com.github.yjagdale.webdriverutil/webdriver-helper-utils/1.2.6.2/jar): Maintenance Release
+ * Bugfix [`#1 `](https://github.com/yjagdale/webdriver-helper/issues/1)
+
 ### [`1.2.6`](https://search.maven.org/artifact/com.github.yjagdale.webdriverutil/webdriver-helper-utils/1.2.6/jar): Maintenance Release
  * Basic Method To close and navigate on browser
  * Updated version to take from command line
