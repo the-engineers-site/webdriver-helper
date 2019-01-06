@@ -1,6 +1,5 @@
 import com.automation.browser.Browser;
 import com.automation.uiactionshelper.ElementActions;
-import com.example.oragnehr.pages.Login;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
@@ -12,7 +11,7 @@ import java.lang.reflect.Method;
 
 public class SampleTestCases extends ElementActions {
 
-    final static Logger logger = Logger.getLogger(SampleTestCases.class);
+    private final static Logger logger = Logger.getLogger(SampleTestCases.class);
 
     @BeforeSuite
     public void beforeSuite() {
@@ -22,7 +21,6 @@ public class SampleTestCases extends ElementActions {
     @BeforeMethod
     public void beforeMethod(Method method) {
         logger.info("Execution for " + method.getName() + " Started");
-        Login login = new Login();
     }
 
     @Test

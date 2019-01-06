@@ -4,17 +4,12 @@ import com.automation.executionhelper.IdentifierCollection;
 import com.automation.utils.ElementBy;
 import org.openqa.selenium.By;
 
+import java.lang.reflect.Field;
 import java.util.HashMap;
 
 public class Login {
-
-
-    public Login() {
-        HashMap<String, By> collection = new HashMap<>();
-        collection.put("User Name", ElementBy.Id("txtUsername"));
-        collection.put("Password", ElementBy.Id("txtPassword"));
-        collection.put("Login", ElementBy.id("btnLogin"));
-        collection.put("Validation Message", ElementBy.id("spanMessage"));
-        IdentifierCollection.put(collection);
-    }
+    By User_Name = ElementBy.Id("txtUsername");
+    By Password = ElementBy.Id("txtPassword");
+    By Login = ElementBy.id("btnLogin");
+    By Validation_Message = ElementBy.id("spanMessage");
 }

@@ -1,9 +1,11 @@
 package com.automation.executionhelper;
 
+import com.automation.confighandler.ConfigReader;
 import org.apache.log4j.Logger;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class PageCollection {
 
@@ -34,4 +36,14 @@ public class PageCollection {
         pageCollection.put(key, value);
     }
 
+    public static void setStartPage() {
+        String startPage = ConfigReader.getInstance().getConfig("START_PAGE_CLASS");
+        logger.info("Setting up first page " + startPage);
+        try {
+            Class destinationPage = Class.forName(startPage);
+            IdentifierCollection.loadIdentifier(destinationPage);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }

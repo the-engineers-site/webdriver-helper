@@ -1,5 +1,13 @@
 ## Changelog
 
+### [`1.3.2`](https://search.maven.org/artifact/com.github.yjagdale.webdriverutil/webdriver-helper-utils/1.3.2/jar): Identifier loading made automatic 
+* Just define page object and Identifiers inside it. Automatically all the identifier will get loaded once you specify destination page
+* New field in config added called `START_PAGE_CLASS` which will hold value for 1st page. 
+
+
+### [`1.3.1`](https://search.maven.org/artifact/com.github.yjagdale.webdriverutil/webdriver-helper-utils/1.3.1/jar): Dependencies Moved to jar itself 
+* Now you dont need to add any dependency to your project if you are adding webdriver-helper dependency.
+
 ### [`1.3`](https://search.maven.org/artifact/com.github.yjagdale.webdriverutil/webdriver-helper-utils/1.3/jar): New Functionality
 * Now you can create Page Collection and add you page classes, New Instance of page will be created once you perform click on element which will navigate to required page
 * Logging changed, Info logs are More readable logs and debug will be more detailed.
