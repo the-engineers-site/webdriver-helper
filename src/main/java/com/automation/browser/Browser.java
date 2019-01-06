@@ -1,6 +1,8 @@
 package com.automation.browser;
 
 import com.automation.confighandler.ConfigReader;
+import com.automation.executionhelper.IdentifierCollection;
+import com.automation.executionhelper.PageCollection;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
@@ -55,9 +57,10 @@ public class Browser {
             driver.manage().timeouts().implicitlyWait(timeout, TimeUnit.SECONDS);
         }
         if (baseUrl != null) {
-            logger.info("Base URL is "+ baseUrl);
+            logger.info("Base URL is " + baseUrl);
             driver.get(baseUrl);
         }
+        PageCollection.setStartPage();
     }
 
     /*
@@ -79,7 +82,7 @@ public class Browser {
 
     public static void quit() {
         logger.debug("Quit Browser action called, Quitting current browser");
-        if(browser.driver == null) {
+        if (browser.driver == null) {
             logger.info("No open browser available to close");
             return;
         }
@@ -88,7 +91,7 @@ public class Browser {
 
     public static void close() {
         logger.debug("Close Browser action called, Closing current browser");
-        if(browser.driver == null) {
+        if (browser.driver == null) {
             logger.info("No open browser available to close");
             return;
         }

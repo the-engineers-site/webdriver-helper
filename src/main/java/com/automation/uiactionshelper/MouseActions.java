@@ -1,5 +1,6 @@
 package com.automation.uiactionshelper;
 
+import com.automation.executionhelper.IdentifierCollection;
 import com.automation.executionhelper.PageCollection;
 import com.automation.utils.WaitUtils;
 import com.automation.utils.WebElementUtils;
@@ -7,6 +8,8 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import java.lang.reflect.Field;
 
 public class MouseActions extends KeyBoardActions {
     private final static Logger logger = Logger.getLogger(MouseActions.class);
@@ -22,12 +25,7 @@ public class MouseActions extends KeyBoardActions {
         logger.info("Clicking on collection element " + eleFromCollection);
         debugger(eleFromCollection, "CLICK");
         WebElementUtils.getWebElement(eleFromCollection).click();
-        try {
-            return destinationPage.newInstance();
-        } catch (InstantiationException | IllegalAccessException e) {
-            e.printStackTrace();
-            return null;
-        }
+        return IdentifierCollection.loadIdentifier(destinationPage);
     }
 
     public static Object click(String eleFromCollection, String destinationPage) {
